@@ -1,51 +1,39 @@
-public class Iphone extends Iphone.ReprodutorMusical, Iphone.AparelhoTelefonico, Iphone.NavegadorInternet {
 
-	public class NavegadorInternet {
+import java.util.Scanner;
 
-		public void exibirPagina(int String url) {
+public class Iphone {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("\nDigite o comando desejado: ");
+        String entrada = scanner.nextLine().trim();
 
+		NavegadorInternet navegador = new NavegadorInternet();
+		ReprodutorMusical reprodutor = new ReprodutorMusical();
+		AparelhoTelefonico telefone = new AparelhoTelefonico();
+
+		
+
+        if (entrada.equalsIgnoreCase("exibirPagina")) {
+			navegador.exibirPagina();
+        } else if (entrada.equalsIgnoreCase("adicionarNovaAba")) {
+            navegador.adicionarNovaAba();
+        } else if (entrada.equalsIgnoreCase("atualizarPagina")) {
+            navegador.atualizarPagina();
+		} else if (entrada.equalsIgnoreCase("selecionarMusica")) {
+			reprodutor.selecionarMusica();
+		} else if (entrada.equalsIgnoreCase("tocar")) {
+			reprodutor.tocar();
+		} else if (entrada.equalsIgnoreCase("pausar")) {
+			reprodutor.pausar();
+		} else if (entrada.equalsIgnoreCase("ligar")) {
+			telefone.ligar();
+		} else if (entrada.equalsIgnoreCase("atender")) {
+			telefone.atender();
+		} else if (entrada.equalsIgnoreCase("iniciarCorreioVoz")) {
+			telefone.iniciarCorreioVoz();
+			
 		}
-
-		public void adicionarNovaAba() {
-
-		}
-
-		public void atualizarPagina() {
-
-		}
-
+		scanner.close();
 	}
-
-	public class ReprodutorMusical {
-
-		public void tocar() {
-
-		}
-
-		public void pausar() {
-
-		}
-
-		public void selecionarMusica(int String musica) {
-
-		}
-
-	}
-
-	public class AparelhoTelefonico {
-
-		public void ligar(int String numero) {
-
-		}
-
-		public void atender() {
-
-		}
-
-		public void iniciarCorreioVoz() {
-
-		}
-
-	}
-
 }
